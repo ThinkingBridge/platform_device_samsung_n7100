@@ -21,23 +21,6 @@ on post-fs-data
     chown system radio /sys/class/sensors/ssp_sensor/ori_poll_delay
     chown system radio /sys/class/sensors/ssp_sensor/mag_poll_delay
 
-# Restorecon
-    restorecon /efs/nv_data.bin
-    restorecon /efs/nv_data.bin.md5
-    restorecon /efs/.nv_core.bak
-    restorecon /efs/.nv_core.bak.md5
-    restorecon /efs/.nv_data.bak
-    restorecon /efs/.nv_data.bak.md5
-    restorecon /efs/.nv_state
-    restorecon /efs/bluetooth/bt_addr
-    restorecon /efs/FactoryApp/factorymode
-    restorecon /efs/FactoryApp/hw_ver
-    restorecon /efs/FactoryApp/keystr
-    restorecon /efs/FactoryApp/serial_no
-    restorecon /efs/imei/mps_code.dat
-    restorecon /efs/gyro_cal_data
-    restorecon /efs/wifi/.mac.info
-
 on boot
 
 # icd
@@ -72,10 +55,10 @@ service dmb /system/bin/dmbserver
     group radio inet misc audio camera graphics net_bt net_bt_admin sdcard_rw
 
 # TVout
-service TvoutService_C /system/bin/bintvoutservice
-    class main
-    user system
-    group graphics
+# service TvoutService_C /system/bin/bintvoutservice
+#    class main
+#    user system
+#    group graphics
 
-on property:ro.tvout.enable=false
-    stop TvoutService_C
+#on property:ro.tvout.enable=false
+#    stop TvoutService_C

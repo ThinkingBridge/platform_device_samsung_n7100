@@ -80,7 +80,7 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras
 
 # Enhanced NFC
-$(call inherit-product, vendor/slim/config/nfc_enhanced.mk)
+# $(call inherit-product, vendor/thinkingbridge/config/nfc_enhanced.mk)
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
